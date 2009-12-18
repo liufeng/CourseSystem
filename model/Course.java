@@ -9,7 +9,7 @@ import java.util.Vector;
 public class Course {
     private String id;
     private String section;
-    private Vector prequisite;
+    private Vector prerequisite;
     private String days;
     private int start;
     private int end;
@@ -19,13 +19,14 @@ public class Course {
         this.section = section;
 
         if (pre.equals("0")) {  // no prerequisite
-            prequisite = null;
+            prerequisite = null;
         } else {
             String[] token = pre.split(":");
-            prequisite = new Vector();
+            prerequisite = new Vector();
 
-            for (int i = 0; i < token.length; i++)
-                prequisite.add(token[i]);
+            for (int i = 0; i < token.length; i++) {
+                prerequisite.add(token[i]);
+            }
         }
 
         this.days = days;
@@ -46,7 +47,7 @@ public class Course {
         ****************/
     }
 
-    public Vector getPrequisite() {
-        return prequisite;
+    public Vector getPrerequisite() {
+        return prerequisite;
     }
 }
