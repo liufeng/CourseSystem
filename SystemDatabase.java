@@ -10,6 +10,9 @@ public class SystemDatabase {
     private HashMap students;
 
     public SystemDatabase() {
+        courses = new HashMap();
+        students = new HashMap();
+
         readCourseData();
         readStudentData();
     }
@@ -30,7 +33,7 @@ public class SystemDatabase {
                 int end = Integer.parseInt(token[5]);
 
                 Course aCourse = new Course(cID, secID, prerequisite, days, start, end);
-                courses.put(cID, aCourse);
+                courses.put(cID+secID, aCourse);
 
                 line = fileIn.readLine();
             }
@@ -43,7 +46,7 @@ public class SystemDatabase {
 
     private void readStudentData() {
         try {
-            BufferedReader fileIn = new BufferedReader(new FileReader("courses.txt"));
+            BufferedReader fileIn = new BufferedReader(new FileReader("students.txt"));
             String line = fileIn.readLine();
 
             while (line != null) {
@@ -61,5 +64,9 @@ public class SystemDatabase {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String toString() {
+        return courses.size() + "\n\n" + students.size();
     }
 }
