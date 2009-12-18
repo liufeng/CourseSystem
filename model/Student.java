@@ -27,4 +27,8 @@ public class Student {
 
         courseToTake = new Vector();
     }
+
+    public Vector getCoursesTaken() {
+        return courseTaken;
+    }
 }

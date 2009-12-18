@@ -78,4 +78,8 @@ public class SystemDatabase {
     public String toString() {
         return courses.size() + "\n\n" + students.size();
     }
+
+    public Student getStudent(int sID) {
+        return (Student) students.get(new Integer(sID));
+    }
 }
