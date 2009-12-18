@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Collection;
 
 public class SystemDatabase {
     private HashMap courses;
@@ -64,6 +65,14 @@ public class SystemDatabase {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Collection getCourses() {
+        return courses.values();
+    }
+
+    public Collection getStudents() {
+        return students.values();
     }
 
     public String toString() {
