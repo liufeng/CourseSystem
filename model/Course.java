@@ -17,10 +17,9 @@ public class Course {
     public Course(String id, String section, String pre, String days, int start, int end) {
         this.id = id;
         this.section = section;
+        prerequisite = new Vector();
 
-        if (pre.equals("0")) {  // no prerequisite
-            prerequisite = null;
-        } else {
+        if (!pre.equals("0")) {
             String[] token = pre.split(":");
             prerequisite = new Vector();
 
@@ -32,6 +31,26 @@ public class Course {
         this.days = days;
         this.start = start;
         this.end = end;
+    }
+
+    public String getID() {
+        return id;
+    }
+
+    public String getSection() {
+        return section;
+    }
+
+    public String getDays() {
+        return days;
+    }
+
+    public int getStart() {
+        return start;
+    }
+
+    public int getEnd() {
+        return end;
     }
 
     public Vector getPrerequisite() {

@@ -20,4 +20,16 @@ public class Decision {
     public String getReason() {
         return reason;
     }
+
+    public String toString() {
+        String result = "";
+
+        if (canTakeTheCourse) {
+            result += "Register success!";
+        } else {
+            result += "Can't Register this course, because: " + reason;
+        }
+
+        return result;
+    }
 }

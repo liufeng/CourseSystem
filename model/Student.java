@@ -28,6 +28,10 @@ public class Student {
         courseToTake = new Vector();
     }
 
+    public String getName() {
+        return name;
+    }
+
     public Vector getCoursesTaken() {
         return courseTaken;
     }
