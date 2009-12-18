@@ -32,19 +32,6 @@ public class Course {
         this.days = days;
         this.start = start;
         this.end = end;
-
-        /****************
-        try {
-            BufferedReader fileIn = new BufferedReader(new FileReader("courses.txt"));
-            String line = fileIn.readLine();
-            while (line != null) {
-
-                line = fileIn.readLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        ****************/
     }
 
     public Vector getPrerequisite() {
